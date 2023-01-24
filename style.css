@@ -1,0 +1,344 @@
+:root{
+    --blue: #1992d4;
+    --grey: #e2e8f0;
+    --white: #ffffff;
+    --yellow: #facc15;
+    --shadow: 1px 2px 3px rgb(190, 190, 190);
+}
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: roboto;
+}
+
+
+.container{
+    width:100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 20% auto;
+    overflow-y: auto;
+}
+
+.aside{
+    background-color: var(--blue);
+    grid-column: 1;
+    grid-row:1 / span 7;
+    z-index:2;
+}
+.header{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right:20px;
+    background:var(--white);
+    grid-column:2 /span 6;
+    grid-row: 1;
+    box-shadow: 0 3px 20px grey;
+    z-index: 1;
+    
+}
+.main{
+    background: var(--grey);
+    grid-row:2 /span 6;
+    grid-column: 2 /span 6;
+    z-index: 0;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+/* side bar design */
+.logo{
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    padding:20px;
+    
+}
+.logo h1{
+    margin-left:20px;
+    letter-spacing: 1px;
+    font-size:1.2rem;
+}
+
+/* Aside */
+.aside_menu{
+    width:12rem;
+    margin-left: 26px;
+}
+
+.aside_primary li, .aside_secondary li{
+    list-style: none;
+    padding-left:0;
+}
+
+
+.aside_primary li a, .aside_secondary li a{
+    text-decoration: none;
+    color:var(--white);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.aside_primary li a>svg, .aside_secondary li a>svg{
+    width: 1.5rem;
+    color: var(--white);
+}
+.aside_primary li a:hover, .aside_secondary li a:hover{
+    border:2px solid var(--white);
+    border-radius: 50px;
+    padding-left:30px;
+    transition: all 0.5s linear;
+}
+.aside_primary li a span, .aside_secondary li a span{
+    margin-left:15px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.aside_secondary{
+    margin-top: 40px;
+}
+
+/* header */
+.header-menu{
+    align-self: stretch;
+    height: 135px;
+}
+.primary_menu{
+    display:flex;
+    justify-content: space-between;
+}
+
+.primary_menu li{
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+.primary_menu li svg{
+    width:1.6rem;
+}
+.primary_menu li:first-child{
+    width:60%;
+    display: flex;
+    align-items: center;
+}
+
+.primary_menu li:first-child input{
+    background-color: var(--grey);
+    border:none;
+    border-radius: 20px;
+    padding: 7px;
+    width:100%;
+    margin-left:20px;
+    outline:none;
+}
+
+.primary_menu li:last-child{
+    display: flex;
+    margin-left:20;
+    align-items: center;
+    width:40%;
+    justify-content: flex-end;
+    padding-right:20px;
+}
+
+.profile_image{
+    width:2.5rem;
+    height:2.5rem;
+    background-color: var(--yellow);
+    border-radius:50%;
+    margin-right:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary_menu li:last-child svg{
+    margin-right: 20px;
+}
+
+/* secondary menu */
+.secondary_menu{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top:20px;
+}
+
+.secondary_menu li:first-child{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 3.5rem 50%;
+    gap:20px;
+    align-items: center;
+}
+
+.secondary_menu li:first-child .profile_image{
+    width:3.5rem;
+    height: 3.5rem;
+}
+
+.secondary_menu li:last-child{
+    list-style: none;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    margin-right:20px;
+}
+
+.secondary_menu li:last-child a{
+    font-weight: bold;
+    text-decoration: none;
+    justify-self: end;
+    color:var(--white);
+    background-color:var(--blue);
+    width:5rem;
+    text-align: center;
+    padding:10px;
+    border-radius: 20px;
+    transition: all 0.7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.secondary_menu li:last-child a:hover{
+    background-color: var(--white);
+    border:2px solid var(--blue);
+    color: var(--blue);
+    transition: all 0.5s linear;
+}
+
+/* Main */
+.projects{
+    padding:20px;
+
+}
+
+.main_aside{
+    padding:20px;
+}
+
+/* card */
+.card_container{
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:40px;
+    margin-top:10px;
+}
+.card{
+    background-color: var(--white);
+    width:90%;
+    height:11rem;
+    padding:20px;
+    border-left:8px solid var(--yellow);
+    border-radius:5px;
+    box-shadow: var(--shadow) ;
+}
+.card p{
+    font-size:11px;
+    color: grey;
+    margin-top:10px;
+}
+
+.card h4{
+    font-size: 14px;
+}
+.icons{
+    margin-right:0;
+    margin-left:auto;
+    margin-top:30px;
+    width:6rem;
+}
+
+.icons svg{
+    width:1rem;
+    margin:5px;
+    cursor: pointer;
+}
+
+.aside_card{
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    margin-top:8px;
+    border-radius: 5px;
+    padding:20px;
+}
+
+.aside_card h5{
+    font-size:12px;
+}
+.aside_card p{
+    font-size: 10px;
+    color:grey;
+    padding-top:8px;
+    padding-bottom: 5px;
+}
+.aside_card hr{
+    border:none;
+    border-bottom: 1px solid var(--grey);
+    margin-bottom:10px;
+    margin-top:8px;
+}
+
+/* trendind */
+
+.trending{
+    margin-top:25px;
+}
+
+.trend_card{
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    margin-top:8px;
+    border-radius: 5px;
+    padding-left:20px;
+    padding-right: 20px;
+    padding-top:5px;
+    padding-bottom: 5px;
+}
+.users{
+    display: flex;
+    align-items: center;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.user_image{
+    width:3rem;
+    height: 3rem;
+    border-radius:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.first_user{
+    color:#f16468;
+    background-color: #e0f2fe;
+}
+
+.second_user{
+    background-color: var(--yellow);
+}
+
+.third_user{
+    background-color: grey;
+    color:orange;
+}
+.fourth_user{
+    background-color: #fda4af;
+    color: #fff;
+}
+
+.user_bio{
+    margin-left:15px;
+    font-size: 10px;
+}
+
+.bio{
+    color:grey;
+    margin-top:5px;
+}
